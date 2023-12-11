@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+  <body>
+    <!-- Navigation-->
+    <%- include('layouts/navbar') -%>
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('/img/write-bg.jpeg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="page-heading">
+              <h1>Write A Blog</h1>
+              <span class="subheading">Share you ideas with the world.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content-->
+    <main class="mb-4">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <h3>Do it you own way. Blog Now</h3>
+            <!-- <h5>Start by creating your own blog. Make it your own way</h5> -->
+            <div class="container px-5 my-5">
+              <!-- Manually created form for the testing of the 
+              POST AND GET request for the post and blog -->
+              <form id="postForm" action="/create_post" method="POST">
+                <!-- display messages from the backend of the app  -->
+                <% if(locals.error) { %>
+                <div class="alert alert-danger">
+                  <%= error %>
+                  <!-- display the error message -->
+                </div>
+                <% } %>
+
+                <div class="form-floating mb-3">
+                  <input
+                    class="form-control"
+                    id="title"
+                    type="text"
+                    placeholder="title"
+                    data-sb-validations="required"
+                    name="postTitle"
+                  />
+                  <label for="title">Title</label>
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="title:required"
+                  >
+                    Title is required.
+                  </div>
+                </div>
+
+                <!-- AREA FOR THE BODY OF THE BLOG -->
+                <div class="form-floating mb-3">
+                  <textarea
+                    class="form-control"
+                    name="postContent"
+                    id="body"
+                    type="text"
+                    placeholder="Body"
+                    style="height: 10rem"
+                    data-sb-validations="required"
+                  ></textarea>
+                  <label for="body">Body</label>
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="body:required"
+                  >
+                    Body is required.
+                  </div>
+                </div>
+                <div class="d-none" id="submitSuccessMessage">
+                  <div class="text-center mb-3"></div>
+                </div>
+                <div class="d-none" id="submitErrorMessage">
+                  <div class="text-center text-danger mb-3">
+                    Error sending message!
+                  </div>
+                </div>
+                <!--  AREA FOR THE IMAGE -->
+
+                <div class="d-grid">
+                  <button
+                    class="btn btn-primary btn-lg"
+                    id="submitButton"
+                    type="submit"
+                  >
+                    Submit post
+                  </button>
+                </div>
+              </form>
+            </div>
+            <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->
+    <%-include('layouts/footer')-%>
+    <!-- <footer class="border-top"> -->
+  </body>
+  <%-include('layouts/script')-%> <%- include("layouts/register") -%>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+  <!-- The header section -->
+  <body>
+    <!-- Navigation-->
+    <%- include('layouts/navbar'); -%>
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('/img/home-bg.jpg')">
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1>Welcome</h1>
+              <span class="subheading">To Blogs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <ul>
+            <!-- <h1>All Blogs</h1> -->
+            <% blogs.forEach(blog => { %> 
+          <div class="post-preview">
+            <a href="/post"
+              ><h2 class="post-title">
+                <%= blog.postTitle %>
+                <!-- I believe every human has a finite number of heartbeats. I don't -->
+                <!-- intend to waste any of mine. -->
+              </h2></a
+            >
+            <p class="post-meta"><%= blog.postContent %></p>
+            <p class="post-meta">
+              Posted on
+              <!-- <a href="#!"></a> -->
+              <%= blog.timestamp %>
+            </p>
+          </div>
+          <% }); %>
+          <hr class="my-4" />
+          <!-- <div class="post-preview">
+            <a href="/post">
+              <h2 class="post-title">Science has not yet mastered prophecy</h2>
+              <h3 class="post-subtitle">
+                We predict too much for the next year and yet far too little for
+                the next ten.
+              </h3>
+            </a>
+            <p class="post-meta">
+              Posted by
+              <a href="#!">MERN Challenge</a>
+              on August 24, 2023
+            </p>
+          </div>
+          <hr class="my-4" />
+          <div class="post-preview">
+            <a href="/post">
+              <h2 class="post-title">Failure is not an option</h2>
+              <h3 class="post-subtitle">
+                Many say exploration is part of our destiny, but it’s actually
+                our duty to future generations.
+              </h3>
+            </a>
+            <p class="post-meta">
+              Posted by
+              <a href="#!">MERN Challenge</a>
+              on July 8, 2023
+            </p>
+          </div> -->
+          <!-- Pager-->
+          <!-- Manual Blog -->
+
+          <!-- <hr class="my-4" /> -->
+          <!-- <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-primary text-uppercase" href="#!"
+              >Older Posts →</a
+            >
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Footer-->
+    <%- include('layouts/footer'); -%>
+
+    <script>
+      const express = require("express");
+      const app = express();
+      app.use(bodyParser.json());
+    </script>
+    <!-- Bootstrap core JS-->
+    <%- include('layouts/script'); -%>
+  </body>
+</html>

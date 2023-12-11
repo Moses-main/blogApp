@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8-col-md-10 mx-auto">
+        <% for(var i=0; i< blogposts.length; i++){ %>
+        <div class="post-view">
+          <a href="post.html">
+            <h2 class="post-title"><%=blogposts[i].title %></h2>
+            <h3 class="post-subtitle"><%=blogposts[i].body %></h3>
+          </a>
+        </div>
+        <hr />
+        <% } %>
+        <!-- pager -->
+      </div>
+    </div>
+  </div>
+  <body>
+    <%- include('layouts/navbar'); -%>; <%- include('layouts/footer'); -%>
+  </body>
+  <%- include('layouts/script'); -%>
+</html>
