@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const dbURL = "mongodb://localhost/App";
-// const dbURL = "mongodb+srv://Moses:moses@blogapp.xbpdw3q.mongodb.net/blogApp";
+// const dbURL = "mongodb://localhost/App"; for the local database
+const dbURL = process.env.dbURL;
 const uniqueValidator = require("mongoose-unique-validator");
 
 // connecting to the database

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const dbURL = "mongodb://localhost/App";
-// const dbURL = "mongodb+srv://Moses:moses@blogapp.xbpdw3q.mongodb.net/blogApp";
+// const dbURL = "mongodb://localhost/App"; for local connection
+const dbURL = process.env.dbURL;
 
 // connecting to the database
 mongoose.connect(dbURL);
