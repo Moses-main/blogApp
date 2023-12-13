@@ -104,6 +104,7 @@ exports.createPost = async (req, res) => {
         await newBlog.save();
         // const blogs = await BlogPost.find({}.populate());
         const blogs = await BlogPost.find({});
+        loggedIn = true;
         res.render("blogPage", { blogs });
         // try {
         // const postWithUser = await BlogPost.find({})

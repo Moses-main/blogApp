@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-// const dbURL = "mongodb://localhost/App"; for the local database
-const dbURL = process.env.dbURL;
+const DB_URL = "mongodb://localhost/App"; // for the local database
+// const DB_URL = process.env.DB_HOME; // for the local database
+// const DB_URL = process.env.DB_URL;
 const uniqueValidator = require("mongoose-unique-validator");
 
 // connecting to the database
-mongoose.connect(dbURL);
+mongoose.connect(DB_URL);
 mongoose.connection;
 const userSchema = new mongoose.Schema({
   username: {

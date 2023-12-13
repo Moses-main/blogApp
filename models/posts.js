@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-// const dbURL = "mongodb://localhost/App"; for local connection
-const dbURL = process.env.dbURL;
+const DB_URL = "mongodb://localhost/App"; //for local connection
+// const DB_URL = process.env.DB_URL;
 
 // connecting to the database
-mongoose.connect(dbURL);
+mongoose.connect(DB_URL);
 mongoose.connection;
 
 const BlogPostSchema = new mongoose.Schema({
