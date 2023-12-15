@@ -35,6 +35,7 @@ const newBlogController = require("./controllers/blogController");
 //Registering Middleware for my apps
 global.loggedIn = null;
 
+require("dotenv").config();
 const winston = require("winston");
 
 // Create a logger instance
