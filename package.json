@@ -119,7 +119,7 @@
   "keywords": [],
   "author": "Moses",
   "engines": {
-    "node": "20.8.0"
+    "node": "18.x"
   },
   "license": "ISC",
   "devDependencies": {
