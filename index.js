@@ -37,6 +37,16 @@ global.loggedIn = null;
 
 const winston = require("winston");
 
+// cloud hosting service
+// import { v2 as cloudinary } from "cloudinary";
+const cloudinary = require("cloudinary");
+
+cloudinary.config({
+  cloud_name: "dv0tt80vn",
+  api_key: "488545146444438",
+  api_secret: "Jf_AbmErA4NP_i0rgPOh9QKAFUA",
+});
+
 // Create a logger instance
 const logger = winston.createLogger({
   level: "error", // Set the log level
