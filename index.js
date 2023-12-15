@@ -37,16 +37,6 @@ global.loggedIn = null;
 
 const winston = require("winston");
 
-// cloud hosting service
-// import { v2 as cloudinary } from "cloudinary";
-const cloudinary = require("cloudinary");
-
-cloudinary.config({
-  cloud_name: "dv0tt80vn",
-  api_key: "488545146444438",
-  api_secret: "Jf_AbmErA4NP_i0rgPOh9QKAFUA",
-});
-
 // Create a logger instance
 const logger = winston.createLogger({
   level: "error", // Set the log level
@@ -112,6 +102,11 @@ app.post("/users/signup", userController);
 router.post("/create_post", newBlogController.createPost);
 module.exports = router;
 
-app.listen(4000, () => {
-  console.log("listening on port 4000");
+let port = process.env.PORT;
+if (port == null || port == " ") {
+  port = 4000;
+}
+
+app.listen(port, () => {
+  console.log("App is listening ...");
 });
