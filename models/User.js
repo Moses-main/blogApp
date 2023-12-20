@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-// const DB_URL = "mongodb://localhost/App"; // for the local database
+const DB_URL = "mongodb://localhost/App"; // for the local database
 // const DB_URL = process.env.DB_HOME; // for the local database
-const DB_URL = process.env.MONGODB_URI;
+// const DB_URL = process.env.MONGODB_URI;
 const uniqueValidator = require("mongoose-unique-validator");
 
 // connecting to the database
 mongoose
   .connect(DB_URL)
-  .then(() => console.log("Connected to MongoDB"))
+  .then(() => console.log("Connected to MongoDB from User collection"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 mongoose.connection;
 const userSchema = new mongoose.Schema({

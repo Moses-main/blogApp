@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-// const DB_URL = "mongodb://localhost/App"; //for local connection
-const DB_URL = process.env.MONGODB_URI;
+const DB_URL = "mongodb://localhost/App"; //for local connection
+// const DB_URL = process.env.MONGODB_URI;
 
 // connecting to the database
 mongoose
   .connect(DB_URL)
-  .then(() => console.log("Connected to MongoDB"))
+  .then(() => console.log("Connected to MongoDB from posts collection"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 mongoose.connection;
 

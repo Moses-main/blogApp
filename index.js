@@ -109,5 +109,5 @@ if (port == null || port == " ") {
 }
 
 app.listen(port, () => {
-  console.log("App is listening ...");
+  console.log(`app listening on ${port}`);
 });
