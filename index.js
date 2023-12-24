@@ -4,13 +4,8 @@ const router = express.Router();
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// const session = require("express-session");
-// const expressSession = require("express-session");
 const routes = require("./routes");
 const cookieParser = require("cookie-parser");
-// const verifyJWT = require("./middleware/verifyJWT");
-// const accessToken = process.env.ACCESS_TOKEN_SECRET;
-// const refreshToken = process.env.REFRESH_TOKEN_SECRET;
 
 // The controllers
 const landingPageController = require("./controllers/landingPageController");
@@ -27,10 +22,8 @@ const loginUserController = require("./controllers/loginUser"); // load route fo
 const dashboardController = require("./controllers/dashboard");
 const authMiddleware = require("./middleware/authMiddleware");
 const redirectIfAuthenticatedMiddleware = require("./middleware/redirectIfAuthenticatedMiddleware");
-// const logoutController = require("./controllers/logout");
 const logoutController = require("./controllers/logoutController");
-const newBlogController = require("./controllers/blogController");
-// const refreshTokenController = require("./controllers/refreshTokenController");
+const newBlogController = require("./controllers/blogController"); // const refreshTokenController = require("./controllers/refreshTokenController");
 
 //Registering Middleware for my apps
 global.loggedIn = null;
@@ -87,19 +80,13 @@ app.get("/home", homeController);
 // app.get("/", homeController);
 app.get("/", landingPageController);
 app.get("/auth/login", redirectIfAuthenticatedMiddleware, loginController);
-// app.get("/auth/login", refreshTokenController);
-// app.get("/auth/authenticate", authUserController);
 app.get("/auth/register", redirectIfAuthenticatedMiddleware, newUserController);
 app.get("/dashboard", dashboardController);
 app.get("/auth/logout", logoutController);
 app.post("/users/login", loginUserController);
 
-// app.use("/auth/logout", require("./routes/refresh"));
-//app.use(verifyJWT);
 app.post("/users/signup", userController);
 
-// app.post("/"); // app.use((req, res) => res.render("notfound")); // used to render 404 page
-// router.get("/", newBlogController.getHomePage);
 router.post("/create_post", newBlogController.createPost);
 module.exports = router;
 

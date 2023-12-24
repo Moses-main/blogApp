@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-const DB_URL = "mongodb://localhost/App"; // for the local database
+// const DB_URL = "mongodb://localhost/App"; // for the local database
 // const DB_URL = process.env.DB_HOME; // for the local database
-// const DB_URL = process.env.MONGODB_URI;
+const DB_URL = process.env.MONGODB_URI;
 const uniqueValidator = require("mongoose-unique-validator");
 
 // connecting to the database

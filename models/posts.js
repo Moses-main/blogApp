@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-const DB_URL = "mongodb://localhost/App"; //for local connection
-// const DB_URL = process.env.MONGODB_URI;
+// const DB_URL = "mongodb://localhost/App"; //for local connection
+const DB_URL = process.env.MONGODB_URI;
 
 // connecting to the database
 mongoose
